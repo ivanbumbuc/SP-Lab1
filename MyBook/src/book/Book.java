@@ -1,51 +1,34 @@
 package book;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Book {
     private String title;
-    private LinkedList<String> paragraphs;
-    private LinkedList<String> images;
-    private LinkedList<String> tables;
+    private TableOfContente tableOfContente;
+    private List<Author> authors = new LinkedList<>();
+    private List<Chapter> chapters = new LinkedList<>();
+
 
     public Book(String title)
     {
         this.title=title;
-        paragraphs=new LinkedList<>();
-        images=new LinkedList<>();
-        tables=new LinkedList<>();
     }
 
-    public void createNewParagraph(String paragraph)
+    public void addAuthor(Author author)
     {
-        this.paragraphs.add(paragraph);
-    }
-    public void createNewImage(String paragraph)
-    {
-        this.images.add(paragraph);
-    }
-    public void createNewTable(String paragraph)
-    {
-        this.tables.add(paragraph);
+        authors.add(author);
     }
 
-    public void print()
+    public int createChapter(String name)
     {
-        System.out.println("Title: "+this.title);
-        System.out.println("Paragraphs:");
-        for(String x:paragraphs)
-        {
-            System.out.println(x);
-        }
-        System.out.println("Images:");
-        for(String x:images)
-        {
-            System.out.println(x);
-        }
-        System.out.println("Tables: ");
-        for(String x:tables)
-        {
-            System.out.println(x);
-        }
+        Chapter chapter=new Chapter(name);
+        chapters.add(chapter);
+        return chapters.size()-1;
+    }
+
+    public Chapter getChapter(int index)
+    {
+        return chapters.get(index);
     }
 }
