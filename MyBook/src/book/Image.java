@@ -1,6 +1,6 @@
 package book;
 
-public class Image {
+public class Image implements Element{
     private String imageName;
 
     public Image(String imageName) {
