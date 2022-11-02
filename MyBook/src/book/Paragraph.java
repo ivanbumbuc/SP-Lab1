@@ -7,8 +7,24 @@ public class Paragraph implements Element{
         this.text = text;
     }
 
+    @Override
     public void print()
     {
         System.out.println("Paragraph: "+text);
+    }
+
+    @Override
+    public void add(Element element) {
+
+    }
+
+    @Override
+    public void remove(Element element) {
+
+    }
+
+    @Override
+    public Element get(int position) {
+        return null;
     }
 }

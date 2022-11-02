@@ -7,8 +7,24 @@ public class Image implements Element{
         this.imageName = imageName;
     }
 
+    @Override
     public void print()
     {
         System.out.println("Image with name: "+imageName);
+    }
+
+    @Override
+    public void add(Element element) {
+
+    }
+
+    @Override
+    public void remove(Element element) {
+
+    }
+
+    @Override
+    public Element get(int position) {
+        return null;
     }
 }

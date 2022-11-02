@@ -3,15 +3,14 @@ package book;
 import java.util.LinkedList;
 import java.util.List;
 
-public class Book {
+public class Book extends Section{
     private String title;
-    private TableOfContente tableOfContente;
     private List<Author> authors = new LinkedList<>();
-    private List<Chapter> chapters = new LinkedList<>();
 
 
     public Book(String title)
     {
+        super("");
         this.title=title;
     }
 
@@ -20,15 +19,19 @@ public class Book {
         authors.add(author);
     }
 
-    public int createChapter(String name)
-    {
-        Chapter chapter=new Chapter(name);
-        chapters.add(chapter);
-        return chapters.size()-1;
-    }
 
-    public Chapter getChapter(int index)
+    public void addContent(Element element) {
+        super.add(element);
+    }
+    @Override
+    public void print()
     {
-        return chapters.get(index);
+        System.out.println("Book: " +title+"\n");
+        System.out.println("Authors: ");
+        for(Author a:authors)
+        {
+            a.print();
+        }
+        super.print();
     }
 }
