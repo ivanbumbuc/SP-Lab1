@@ -4,14 +4,12 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Book extends Section{
-    private String title;
     private List<Author> authors = new LinkedList<>();
 
 
     public Book(String title)
     {
-        super("");
-        this.title=title;
+        super(title);
     }
 
     public void addAuthor(Author author)
@@ -32,6 +30,7 @@ public class Book extends Section{
         {
             a.print();
         }
+        System.out.println();
         super.print();
     }
 }

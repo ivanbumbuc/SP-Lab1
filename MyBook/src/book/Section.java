@@ -14,7 +14,8 @@ public class Section implements Element{
 
     @Override
     public void print() {
-        System.out.println(title);
+        if(!(this instanceof Book))
+            System.out.println(title);
         for(Element e:elements)
         {
             e.print();
