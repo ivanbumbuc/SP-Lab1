@@ -2,6 +2,7 @@ package book;
 
 public class Paragraph implements Element{
     private String text;
+    private AlignStrategy alignStrategy ;
 
     public Paragraph(String text) {
         this.text = text;
@@ -10,7 +11,10 @@ public class Paragraph implements Element{
     @Override
     public void print()
     {
-        System.out.println("Paragraph: "+text);
+        if(alignStrategy==null)
+            System.out.println("Paragraph: "+text);
+        else
+            System.out.println("Paragraph: "+alignStrategy.render(this));
     }
 
     @Override
@@ -23,8 +27,18 @@ public class Paragraph implements Element{
 
     }
 
+    public void setAlignStrategy(AlignStrategy alignStrategy)
+    {
+        this.alignStrategy=alignStrategy;
+    }
+
     @Override
     public Element get(int position) {
         return null;
+    }
+
+    public String getText()
+    {
+        return text;
     }
 }
