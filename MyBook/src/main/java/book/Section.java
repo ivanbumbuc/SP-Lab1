@@ -36,4 +36,9 @@ public class Section implements Element{
     public Element get(int position) {
         return elements.get(position);
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+        elements.forEach(e -> e.accept(visitor));
+    }
 }
