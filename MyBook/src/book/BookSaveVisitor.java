@@ -2,7 +2,6 @@ package book;
 
 public class BookSaveVisitor implements Visitor{
 
-    JSONObject jsonObject = new JSONObject();
     @Override
     public void visitBook(Book book) {
 
