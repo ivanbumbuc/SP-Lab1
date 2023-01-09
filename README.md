@@ -9,3 +9,6 @@ https://github.com/ivanbumbuc/SP-Lab1/tree/60276421a5bcf67900186d4eec9dbcb2c7914
 - all good
 
 Nota 10
+
+# Nota finala propusa:
+10
